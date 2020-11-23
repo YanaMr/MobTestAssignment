@@ -14,13 +14,15 @@ public class EmailValidationTest {
     private static final String COMMENTS_SEARCH_URL = "https://jsonplaceholder.typicode.com/comments";
     private static final String USERNAME = "Delphine";
 
-   @Test
+    @Test
     public void Test() {
 
-       Response personByUsername = getPersonByUsername(USERNAME);
-       assertEquals(personByUsername.getStatusCode(), HTTP_OK);
+        Response personByUsername = getPersonByUsername(USERNAME);
+        assertEquals(personByUsername.getStatusCode(), HTTP_OK);
+
 
     }
+
     private Response getPersonByUsername(String username) {
         return given()
                 .when()
