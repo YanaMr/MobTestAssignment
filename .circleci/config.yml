@@ -21,12 +21,12 @@ jobs:
             - ~/.m2
           key: maven-{{ checksum "/tmp/maven_cache_seed" }}
       - run:
-          name: Generate report
+          name: Generate Allure report
           command: mvn allure:report
       - store_test_results:
-          path: target/surefire-reports
+          path: target/surefire-reports/
       - store_test_results:
-          path: target/site/allure-maven-plugin
+          path: target/site/allure-maven-plugin/
 workflows:
   maven_test:
     jobs:
