@@ -13,7 +13,7 @@ import pojo.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmailValidationTest {
+public class EmailValidationTest extends HealthCheck{
 
     Base base = new Base();
     Users users = new Users();
@@ -26,14 +26,14 @@ public class EmailValidationTest {
     public void Test() {
 
         Response searchResp = users.getPersonByUsername(USERNAME);
-        base.checkStatusCode(searchResp);
+        base.checkStatusCodeIsOk(searchResp);
 
         User[] foundUsers = searchResp.getBody().as(User[].class);
         users.checkOnlyOneUserFound(foundUsers);
         int userId = foundUsers[0].getId();
 
         Response searchPosts = posts.getUserPosts(userId);
-        base.checkStatusCode(searchPosts);
+        base.checkStatusCodeIsOk(searchPosts);
 
         Post[] foundPosts = searchPosts.getBody().as(Post[].class);
         ArrayList<Integer> postIds = new ArrayList<>();
