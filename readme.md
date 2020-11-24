@@ -10,4 +10,4 @@ Run "mvn clean test" in console
 
 Generating Allure report:
 Report can be generated only after test run
-Run "mvn io.qameta.allure:allure-maven:serve" command from command line to generate and open Allure report
+Run "mvn allure:serve" command from command line to generate and open Allure report
