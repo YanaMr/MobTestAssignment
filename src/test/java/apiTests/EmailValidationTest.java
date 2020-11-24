@@ -1,5 +1,6 @@
 package apiTests;
 
+import base.HealthCheck;
 import helpers.Base;
 import helpers.Comments;
 import helpers.Posts;
@@ -13,7 +14,7 @@ import pojo.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmailValidationTest extends HealthCheck{
+public class EmailValidationTest extends HealthCheck {
 
     Base base = new Base();
     Users users = new Users();

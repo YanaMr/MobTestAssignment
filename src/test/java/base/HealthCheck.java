@@ -1,4 +1,4 @@
-package apiTests;
+package base;
 
 
 import helpers.JsonValidator;
