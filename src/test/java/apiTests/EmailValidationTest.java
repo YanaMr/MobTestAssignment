@@ -1,7 +1,6 @@
 package apiTests;
 
-import base.HealthCheck;
-import helpers.BaseHelper;
+import baseTest.BaseTest;
 import helpers.CommentHelper;
 import helpers.PostHelper;
 import helpers.UserHelper;
@@ -14,7 +13,7 @@ import pojo.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmailValidationTest extends HealthCheck {
+public class EmailValidationTest extends BaseTest {
 
     UserHelper userHelper = new UserHelper();
     PostHelper postHelper = new PostHelper();
@@ -23,7 +22,7 @@ public class EmailValidationTest extends HealthCheck {
     private static final String USERNAME = "Delphine";
 
     @Test
-    public void Test() {
+    public void emailValidation() {
 
         Response searchResp = userHelper.getPersonByUsername(USERNAME);
         userHelper.checkStatusCodeIsOk(searchResp);

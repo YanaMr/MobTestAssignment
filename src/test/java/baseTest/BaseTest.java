@@ -1,10 +1,9 @@
-package base;
-
+package baseTest;
 
 import helpers.JsonValidatorHelper;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
-public class HealthCheck {
+public class BaseTest {
     JsonValidatorHelper jsonValidator = new JsonValidatorHelper();
 
     private static final String USERS_URL = "https://jsonplaceholder.typicode.com/users";
@@ -14,8 +13,8 @@ public class HealthCheck {
     private static final String POSTS_JSON_PATH = "posts.json";
     private static final String COMMENTS_JSON_PATH = "comments.json";
 
-    @Test
-    public void Test() {
+    @BeforeEach
+    public void healthCheck() {
         jsonValidator.validateJsonSchema(USERS_URL, USERS_JSON_PATH);
         jsonValidator.validateJsonSchema(POSTS_URL, POSTS_JSON_PATH);
         jsonValidator.validateJsonSchema(COMMENTS_URL, COMMENTS_JSON_PATH);
