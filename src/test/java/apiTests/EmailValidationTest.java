@@ -1,10 +1,10 @@
 package apiTests;
 
 import base.HealthCheck;
-import helpers.Base;
-import helpers.Comments;
-import helpers.Posts;
-import helpers.Users;
+import helpers.BaseHelper;
+import helpers.CommentHelper;
+import helpers.PostHelper;
+import helpers.UserHelper;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 import pojo.Comment;
@@ -16,36 +16,35 @@ import java.util.List;
 
 public class EmailValidationTest extends HealthCheck {
 
-    Base base = new Base();
-    Users users = new Users();
-    Posts posts = new Posts();
-    Comments comments = new Comments();
+    UserHelper userHelper = new UserHelper();
+    PostHelper postHelper = new PostHelper();
+    CommentHelper commentHelper = new CommentHelper();
 
     private static final String USERNAME = "Delphine";
 
     @Test
     public void Test() {
 
-        Response searchResp = users.getPersonByUsername(USERNAME);
-        base.checkStatusCodeIsOk(searchResp);
+        Response searchResp = userHelper.getPersonByUsername(USERNAME);
+        userHelper.checkStatusCodeIsOk(searchResp);
 
         User[] foundUsers = searchResp.getBody().as(User[].class);
-        users.checkOnlyOneUserFound(foundUsers);
+        userHelper.checkOnlyOneUserFound(foundUsers);
         int userId = foundUsers[0].getId();
 
-        Response searchPosts = posts.getUserPosts(userId);
-        base.checkStatusCodeIsOk(searchPosts);
+        Response searchPosts = postHelper.getUserPosts(userId);
+        postHelper.checkStatusCodeIsOk(searchPosts);
 
         Post[] foundPosts = searchPosts.getBody().as(Post[].class);
         ArrayList<Integer> postIds = new ArrayList<>();
-        posts.createPostIdsList(postIds, foundPosts);
+        postHelper.createPostIdsList(postIds, foundPosts);
 
         List<Comment> foundComments = new ArrayList<>();
-        comments.getCommentsList(postIds, foundComments);
+        commentHelper.getCommentsList(postIds, foundComments);
 
         ArrayList<String> emails = new ArrayList<>();
-        comments.getEmails(emails, foundComments);
+        commentHelper.getEmails(emails, foundComments);
 
-        comments.checkEmailFormat(emails);
+        commentHelper.checkEmailFormat(emails);
     }
 }

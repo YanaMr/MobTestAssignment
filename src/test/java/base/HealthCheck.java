@@ -1,11 +1,11 @@
 package base;
 
 
-import helpers.JsonValidator;
+import helpers.JsonValidatorHelper;
 import org.junit.jupiter.api.Test;
 
 public class HealthCheck {
-    JsonValidator jsonValidator = new JsonValidator();
+    JsonValidatorHelper jsonValidator = new JsonValidatorHelper();
 
     private static final String USERS_URL = "https://jsonplaceholder.typicode.com/users";
     private static final String POSTS_URL = "https://jsonplaceholder.typicode.com/posts";

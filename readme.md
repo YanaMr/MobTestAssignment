@@ -1,5 +1,5 @@
 Project requirements:
-Java Development Kit 8 and higher
+Java Development Kit 8 and higher;
 Maven
 
 Run project:

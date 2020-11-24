@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import static io.restassured.RestAssured.given;
 
-public class Posts {
+public class PostHelper extends BaseHelper{
     private static final String POSTS_SEARCH_URL = "https://jsonplaceholder.typicode.com/posts";
 
     public Response getUserPosts(int userId) {

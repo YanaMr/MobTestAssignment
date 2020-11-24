@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class Comments {
+public class CommentHelper extends BaseHelper{
     private static final String COMMENTS_SEARCH_URL = "https://jsonplaceholder.typicode.com/comments";
     private static final Pattern EMAIL_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 

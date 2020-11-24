@@ -6,7 +6,7 @@ import pojo.User;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Users {
+public class UserHelper extends BaseHelper{
     private static final String USERS_SEARCH_URL = "https://jsonplaceholder.typicode.com/users";
 
     public Response getPersonByUsername(String username) {
