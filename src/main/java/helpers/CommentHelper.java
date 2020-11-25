@@ -12,14 +12,15 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CommentHelper extends BaseHelper{
-    private static final String COMMENTS_SEARCH_URL = "https://jsonplaceholder.typicode.com/comments";
+    private static final String COMMENTS_URL = "https://jsonplaceholder.typicode.com/comments";
     private static final Pattern EMAIL_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+    public static final java.lang.String POSTID_QUERY = "?postId=";
 
 
     public Response getPostComments(int postId) {
         return given()
                 .when()
-                .get(COMMENTS_SEARCH_URL + "?postId=" + postId);
+                .get(COMMENTS_SEARCH_URL + POSTID_QUERY + postId);
     }
 
     public List<Comment> getCommentsList(ArrayList<Integer> postIds, List<Comment> foundComments) {

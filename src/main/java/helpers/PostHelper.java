@@ -8,12 +8,13 @@ import java.util.ArrayList;
 import static io.restassured.RestAssured.given;
 
 public class PostHelper extends BaseHelper{
-    private static final String POSTS_SEARCH_URL = "https://jsonplaceholder.typicode.com/posts";
+    private static final String POSTS_URL = "https://jsonplaceholder.typicode.com/posts";
+    public static final java.lang.String USERID_QUERY = "?userId=";
 
     public Response getUserPosts(int userId) {
         return given()
                 .when()
-                .get(POSTS_SEARCH_URL + "?userId=" + userId);
+                .get(POSTS_SEARCH_URL + USER_ID + userId);
     }
 
     public ArrayList<Integer> createPostIdsList(ArrayList<Integer> postIds, Post[] foundPosts) {
