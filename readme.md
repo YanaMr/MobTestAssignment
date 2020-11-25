@@ -13,7 +13,7 @@ Report can be generated only after test run
 Run "mvn allure:serve" command from command line to generate and open Allure report
 
 
-Project is integrated with Circle CI, Allure report can be viewed on the "Artifact" tab - target/site/allure-maven-plugin/allure-maven.html
+Project is integrated with Circle CI, Allure report can be viewed on the "Artifact" tab - target/site/allure-maven-plugin/index.html
 Dashboard can be found https://app.circleci.com/pipelines/github/YanaMr/MobTestAssignment
 
 Test "EmailValidationTest" coveres:
