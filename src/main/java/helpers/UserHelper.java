@@ -13,7 +13,7 @@ public class UserHelper extends BaseHelper{
     public Response getPersonByUsername(String username) {
         return given()
                 .when()
-                .get(USERS_SEARCH_URL + USERNAME_QUERY + username);
+                .get(USERS_URL + USERNAME_QUERY + username);
     }
 
     public void checkOnlyOneUserFound(User[] foundUsers) {

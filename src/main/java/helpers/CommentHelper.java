@@ -20,7 +20,7 @@ public class CommentHelper extends BaseHelper{
     public Response getPostComments(int postId) {
         return given()
                 .when()
-                .get(COMMENTS_SEARCH_URL + POSTID_QUERY + postId);
+                .get(COMMENTS_URL + POSTID_QUERY + postId);
     }
 
     public List<Comment> getCommentsList(ArrayList<Integer> postIds, List<Comment> foundComments) {

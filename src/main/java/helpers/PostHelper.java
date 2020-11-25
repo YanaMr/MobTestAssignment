@@ -14,7 +14,7 @@ public class PostHelper extends BaseHelper{
     public Response getUserPosts(int userId) {
         return given()
                 .when()
-                .get(POSTS_SEARCH_URL + USER_ID + userId);
+                .get(POSTS_URL + USERID_QUERY + userId);
     }
 
     public ArrayList<Integer> createPostIdsList(ArrayList<Integer> postIds, Post[] foundPosts) {
