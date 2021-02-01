@@ -14,13 +14,14 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- Components versions -->
         <junit.version>5.7.0</junit.version>
-        <allure.version>2.13.6</allure.version>
+        <allure.version>2.13.8</allure.version>
         <allure.maven>2.10.0</allure.maven>
         <maven.compiler.version>3.8.1</maven.compiler.version>
         <maven.surefire.version>2.22.2</maven.surefire.version>
         <aspectj.version>1.8.10</aspectj.version>
         <rest.assured.version>4.3.2</rest.assured.version>
-        <cucumber>6.6.0</cucumber>
+        <cucumber>6.9.1</cucumber>
+        <slf4j.version>1.8.0-beta4</slf4j.version>
         <spring.version>4.3.4.RELEASE</spring.version>
         <projectlombok.version>1.18.16</projectlombok.version>
     </properties>
@@ -43,7 +44,7 @@
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
+            <artifactId>allure-cucumber4-jvm</artifactId>
             <version>${allure.version}</version>
         </dependency>
         <dependency>
@@ -74,10 +75,20 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>${cucumber}</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

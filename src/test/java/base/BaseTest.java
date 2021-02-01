@@ -1,4 +1,4 @@
-package baseTest;
+package base;
 
 import helpers.JsonValidatorHelper;
 import org.junit.jupiter.api.BeforeEach;

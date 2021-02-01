@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Steps {
+
     UserHelper userHelper = new UserHelper();
     PostHelper postHelper = new PostHelper();
     CommentHelper commentHelper = new CommentHelper();
@@ -29,15 +30,9 @@ public class Steps {
 
     private static final String USERNAME = "Delphine";
 
-    @Given("I sent a request to get user by username")
+    @Given("I sent a request to get user by username and I received response body")
     public void requestUsername() {
         Response searchResp = userHelper.getPersonByUsername(USERNAME);
-        scenarioContext.setContext(Context.GET_USER_RESPONSE, searchResp);
-    }
-
-    @And("I get response body")
-    public void getResponseBody() {
-        Response searchResp = (Response) scenarioContext.getContext(Context.GET_USER_RESPONSE);
         User[] foundUsers = searchResp.getBody().as(User[].class);
         scenarioContext.setContext(Context.FOUND_USER_BODY, foundUsers);
     }

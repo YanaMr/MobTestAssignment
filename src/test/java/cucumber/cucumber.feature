@@ -1,8 +1,7 @@
 Feature: Email Validation
 
   Scenario: Validate emails format from comments
-    Given I sent a request to get user by username
-    And I get response body
+    Given I sent a request to get user by username and I received response body
     And I check that only one user is found
     And I save users ID
     And I sent a request to get posts by user ID
